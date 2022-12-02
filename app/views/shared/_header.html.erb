@@ -10,19 +10,30 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto main-nav align-items-center">
+        <li class="nav-item">
+          <%= link_to '会社概要', '#' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'お知らせ', '#' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to '通知', '#' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'マイページ', '#' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'いいね一覧', '#' %>
+        </li>
         <li class="nav-item dropdown dropdown-slide">
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            掲示板
+            出品
           </a>
 
           <div class="dropdown-menu dropdown-menu-right">
-            <%= link_to '掲示板一覧', '#', class: 'dropdown-item' %>
-            <%= link_to '掲示板作成', '#', class: 'dropdown-item' %>
+            <%= link_to '出品一覧', '#', class: 'dropdown-item' %>
+            <%= link_to '出品作成', '#', class: 'dropdown-item' %>
           </div>
-        </li>
-
-        <li class="nav-item">
-          <%= link_to 'ブックマーク一覧', '#', class: 'nav-link' %>
         </li>
 
         <li class="nav-item dropdown dropdown-slide">
@@ -32,9 +43,9 @@
           <div class="dropdown-menu dropdown-menu-right">
             <div class="dropdown-item">らんてっく たろう</div>
             <div class="dropdown-divider"></div>
-            <%= link_to 'プロフィール', '#', class: 'dropdown-item' %>
+            <%= link_to 'プロフィール変更', edit_user_registration_path %>
 
-            <%= link_to 'ログアウト', '#', class: 'dropdown-item' %>
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
           </div>
         </li>
       </ul>
