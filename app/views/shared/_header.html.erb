@@ -1,30 +1,35 @@
 <header>
   <nav class="navbar navbar-expand-lg navigation navbar-light bg-light">
 
-    <%= link_to root_path, class: 'navbar-brand' do %>
-      <%= image_tag '' %>
-    <% end %>
-    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="col-lg-6 d-none d-lg-block">
+      <div class="d-inline-flex align-items-center">
+        <%= link_to '会社概要', '#' %>
+        <span class="text-muted px-2">|</span>
+        <a class="text-dark" href="">Help</a>
+        <span class="text-muted px-2">|</span>
+        <a class="text-dark" href="">Support</a>
+      </div>
+    </div>
       <ul class="navbar-nav ml-auto main-nav align-items-center">
-        <li class="nav-item">
-          <%= link_to '会社概要', '#' %>
-        </li>
         <li class="nav-item">
           <%= link_to 'お知らせ', '#' %>
         </li>
+        <span class="text-muted px-2">|</span>
         <li class="nav-item">
           <%= link_to '通知', '#' %>
         </li>
+        <span class="text-muted px-2">|</span>
         <li class="nav-item">
           <%= link_to 'マイページ', '' %>
         </li>
+        <span class="text-muted px-2">|</span>
         <li class="nav-item">
           <%= link_to 'いいね一覧', '#' %>
         </li>
+        <span class="text-muted px-2">|</span>
         <li class="nav-item">
           <%= link_to 'ログアウト', 
           destroy_user_session_path,
@@ -32,8 +37,6 @@
           method: :delete
         %>
         </li>
-
-
         <li class="nav-item dropdown dropdown-slide">
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             出品
@@ -44,7 +47,9 @@
             <%= link_to '出品作成', '#', class: 'dropdown-item' %>
           </div>
         </li>
-
+        <a class="text-dark px-2" href="">
+          <i class="fab fa-twitter"></i>
+        </a>
         <li class="nav-item dropdown dropdown-slide">
           <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="header-profile">
             画像
@@ -59,5 +64,35 @@
         </li>
       </ul>
     </div>
+    
   </nav>
+  <div class="row align-items-center py-3 px-xl-5">
+      <div class="col-lg-3 d-none d-lg-block">
+        <a href="" class="text-decoration-none">
+          <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
+        </a>
+      </div>
+      <div class="col-lg-6 col-6 text-left">
+        <form action="">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for products">
+              <div class="input-group-append">
+                <span class="input-group-text bg-transparent text-primary">
+                  <i class="fa fa-search"></i>
+                </span>
+              </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-3 col-6 text-right">
+        <a href="" class="btn border">
+          <i class="fas fa-heart text-primary"></i>
+            <span class="badge">0</span>
+        </a>
+        <a href="" class="btn border">
+          <i class="fas fa-shopping-cart text-primary"></i>
+            <span class="badge">0</span>
+        </a>
+      </div>
+    </div>
 </header>
