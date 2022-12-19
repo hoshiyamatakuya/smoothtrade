@@ -6,9 +6,9 @@
     <%= f.hidden_field :post_image_cache %>
   </div>
   <div class='mt-3 mb-3'>
-    <%= image_tag post.image.url,
+    <%= image_tag post.post_image_url,
                   id: 'preview',
-                  size: '300x200' %>
+                  size: '200x300' %>
   </div>
   <div class="form-group">
     <%= f.label :title %>
