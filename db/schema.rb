@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_19_091258) do
+ActiveRecord::Schema.define(version: 2022_12_19_140532) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "body", null: false
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2022_12_19_091258) do
     t.bigint "post_category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "post_image"
     t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["post_category_id"], name: "index_posts_on_post_category_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
