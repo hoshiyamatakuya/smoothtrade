@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :posts
+  resources :posts do
+    resources :comments, only: %i[create], shallow: true
+  end
   devise_for :users
   root 'homes#top'
   devise_scope :user do
