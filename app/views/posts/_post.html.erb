@@ -6,7 +6,11 @@
         <h4 class="card-title">
           <%= link_to post.title, post_path(post) %>
         </h4>
-        <%= render 'posts/crud_menus', post: post if current_user.own?(post) %>
+        <% if current_user.own?(post) %>
+          <%= render 'posts/crud_menus', post: post %>
+        <% else %>
+          <%= render 'posts/bookmark_button', post: post  %>
+        <% end %>
         <ul class="list-inline">
           <li class="list-inline-item">
             <%= icon 'far', 'user' %>
