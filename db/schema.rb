@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_21_152621) do
+ActiveRecord::Schema.define(version: 2022_12_24_053310) do
 
   create_table "bookmarks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -48,13 +48,9 @@ ActiveRecord::Schema.define(version: 2022_12_21_152621) do
     t.string "title", null: false
     t.string "body", null: false
     t.bigint "user_id", null: false
-    t.bigint "category_id"
-    t.bigint "post_category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "post_image"
-    t.index ["category_id"], name: "index_posts_on_category_id"
-    t.index ["post_category_id"], name: "index_posts_on_post_category_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -91,7 +87,5 @@ ActiveRecord::Schema.define(version: 2022_12_21_152621) do
   add_foreign_key "bookmarks", "users"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
-  add_foreign_key "posts", "categories"
-  add_foreign_key "posts", "post_categories"
   add_foreign_key "posts", "users"
 end
