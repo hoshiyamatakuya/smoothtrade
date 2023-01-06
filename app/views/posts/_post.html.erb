@@ -21,7 +21,14 @@
             <%= l post.created_at, format: :long %>
           </li>
         </ul>
-        <p class="card-text"><%=safe_join(post.body.split("\n"),tag(:br))%></p>
+        <div class="body_area">
+          <h7>●譲渡品：</h7>
+          <p class="card-text"><%=safe_join(post.body.split("\n"),tag(:br))%></p>
+        </div>
+        <div class="body_area">
+        <h7>●希望品：</h7>
+          <p class="card-text"><%=safe_join(post.wish_body.split("\n"),tag(:br))%></p>
+        </div>
       </div>
     </div>
   </div>

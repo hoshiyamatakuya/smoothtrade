@@ -2,10 +2,13 @@
 
 <div class="container">
   <div class="text-center my-5">
-    <h1 class="fw-bolder">Home#tops</h1>
-    <p class="lead mb-0">toppages</p>     
+    <h1 class="fw-bolder">SmoothTrade</h1>
+    <% unless user_signed_in? %>
+      <%= link_to '新規会員登録はこちら', new_user_registration_path %>
+    <% end %>
   </div>
 </div>
+
 
 
 
