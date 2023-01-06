@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_06_121019) do
+ActiveRecord::Schema.define(version: 2023_01_06_144012) do
 
   create_table "bookmarks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -40,6 +40,10 @@ ActiveRecord::Schema.define(version: 2023_01_06_121019) do
     t.datetime "updated_at", null: false
     t.string "post_image"
     t.string "wish_body", null: false
+    t.integer "year"
+    t.string "goods_name"
+    t.string "post_category"
+    t.string "goods_category"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 

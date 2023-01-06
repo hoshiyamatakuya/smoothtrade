@@ -4,7 +4,11 @@
     <%= f.search_field :title_cont, class: 'form-control', placeholder: 'キーワードで検索してみよう！' %>
     <%= f.search_field :body_cont, class: 'form-control', placeholder: '譲渡商品名で検索してみよう！' %>
     <%= f.search_field :wish_body_cont, class: 'form-control', placeholder: '希望商品名で検索してみよう！' %>
-
+    <br>
+    <%= f.search_field :post_category_cont, class: 'form-control', placeholder: 'アーティスト名、アニメ名で検索してみよう！' %>
+    <%= f.search_field :goods_category_cont, class: 'form-control', placeholder: '商品カテゴリーで検索してみよう！' %>
+    <%= f.search_field :goods_name_cont, class: 'form-control', placeholder: '商品正式名で検索してみよう！' %>
+    <%= f.search_field :year_cont, class: 'form-control', placeholder: '販売年で検索してみよう！' %>
     <div class="input-group-append">
       <%= f.submit class: 'btn btn-primary' %>
     </div>
