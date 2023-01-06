@@ -51,6 +51,7 @@ gem 'kaminari', '~> 0.17.0'
 gem 'bootstrap4-kaminari-views'
 
 gem 'ransack'
+gem 'rails-i18n', '5.1.3'
 
 
 group :development, :test do

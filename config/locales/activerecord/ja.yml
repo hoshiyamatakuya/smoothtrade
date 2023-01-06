@@ -1,0 +1,18 @@
+ja:
+  activerecord:
+    models:
+      user: 'ユーザー'
+      post: '掲示板'
+      comment: 'コメント'
+    attributes:
+      post:
+        title: 'トレード商品名'
+        post_image: '商品画像'
+        body: '譲渡商品'
+        wish_body: '希望商品'
+        year: '販売年'
+        goods_name: '商品正式名'
+        goods_category: 'グッズカテゴリー'
+        post_category: 'ブランド名'
+      comment:
+        body: 'コメント'
