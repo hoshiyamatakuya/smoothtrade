@@ -47,6 +47,8 @@ gem 'omniauth-rails_csrf_protection'
 
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'kaminari', '~> 0.17.0'
+gem 'bootstrap4-kaminari-views'
 
 
 group :development, :test do
