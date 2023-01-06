@@ -1,7 +1,10 @@
 
 <%= search_form_for @q, url: posts_path do |f| %>
   <div class="input-group mb-3">
-    <%= f.search_field :title_or_body_cont, class: 'form-control', placeholder: t('defaults.search_word') %>
+    <%= f.search_field :title_cont, class: 'form-control', placeholder: 'キーワードで検索してみよう！' %>
+    <%= f.search_field :body_cont, class: 'form-control', placeholder: '譲渡商品名で検索してみよう！' %>
+    <%= f.search_field :wish_body_cont, class: 'form-control', placeholder: '希望商品名で検索してみよう！' %>
+
     <div class="input-group-append">
       <%= f.submit class: 'btn btn-primary' %>
     </div>
