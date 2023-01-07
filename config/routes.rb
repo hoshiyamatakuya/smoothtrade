@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  get 'users/index'
+  get 'users/show'
   get 'mypage/index'
   get 'bookmarks/create'
   get 'bookmarks/destroy'
   get 'my_posts/index'
+  resources :messages, only: [:create]
+  resources :rooms, only: [:create, :index, :show]
   resources :posts do
     resources :comments, only: %i[create destroy], shallow: true
     collection do
