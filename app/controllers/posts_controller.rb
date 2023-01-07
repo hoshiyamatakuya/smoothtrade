@@ -5,6 +5,10 @@ class PostsController < ApplicationController
     @posts = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
   end
 
+  def index_user
+    @posts = Post.where(user_id:params[:id])
+  end
+
   def new
     @post = Post.new
   end

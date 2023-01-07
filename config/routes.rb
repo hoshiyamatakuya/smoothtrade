@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     collection do
       get :bookmarks
     end
+    member do
+      get :index_user
+    end
   end
   resources :bookmarks, only: %i[create destroy]
   devise_for :users
