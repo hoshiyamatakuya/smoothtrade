@@ -14,7 +14,7 @@
         <ul class="list-inline">
           <li class="list-inline-item">
             <%= icon 'far', 'user' %>
-            <%= post.user.username %>
+            <%= link_to post.user.username, index_user_post_path(post.user_id), class: 'nav-link'  %>
           </li>
           <li class="list-inline-item">
             <%= icon 'far', 'calendar' %>
