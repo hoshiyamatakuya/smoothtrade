@@ -13,7 +13,7 @@
         <% end %>
         <ul class="list-inline">
           <li class="list-inline-item">
-            <%= icon 'far', 'user' %>
+            <%= image_tag post.user.avatar.url, size: '40x40', class: 'rounded-circle mr15'%>
             <%= link_to post.user.username, index_user_post_path(post.user_id), class: 'nav-link'  %>
           </li>
           <li class="list-inline-item">

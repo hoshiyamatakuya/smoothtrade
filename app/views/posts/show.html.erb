@@ -29,7 +29,8 @@
               <br>
               <%= render 'crud_menus', post: @post if current_user.own?(@post) %>
               <ul class="list-inline">
-                <li class="list-inline-item">by <%= link_to @post.user.username, index_user_post_path(@post.user_id), class: 'nav-link' %></li>
+                <%= image_tag @post.user.avatar.url, size: '40x40', class: 'rounded-circle mr15'%>
+                <li class="list-inline-item"><%= link_to @post.user.username, index_user_post_path(@post.user_id), class: 'nav-link' %></li>
                 <li class="list-inline-item"><%= l @post.created_at, format: :long  %></li>
               </ul>
             </div>
