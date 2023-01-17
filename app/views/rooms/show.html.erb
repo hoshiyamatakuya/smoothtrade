@@ -9,7 +9,8 @@
 <% if @messages.present? %>
   <% @messages.each do |m| %>
     <strong><%= m.body %></strong>
-    <small>by <strong><a href="/users/<%= m.user_id %>"><%= m.user.username %>さん</a></strong></small>
+    <%= image_tag m.user.avatar.url, size: '40x40', class: 'rounded-circle mr15'%>
+    <small><strong><a href="/users/<%= m.user_id %>"><%= m.user.username %>さん</a></strong></small>
     <hr>
   <% end %>
 <% else %>
