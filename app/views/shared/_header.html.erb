@@ -21,7 +21,11 @@
         </li>
         <span class="text-muted px-2">|</span>
         <li class="nav-item">
-          <%= link_to '通知', '#' %>
+          <% if unchecked_notifications.any? %>
+            <%= link_to '通知', notifications_path , class: "nav-link notice-active" %>
+          <% else %>
+            <%= link_to '通知', notifications_path , class: "nav-link" %>
+          <% end %>
         </li>
         <span class="text-muted px-2">|</span>
         <li class="nav-item">
