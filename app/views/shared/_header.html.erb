@@ -22,9 +22,13 @@
         <span class="text-muted px-2">|</span>
         <li class="nav-item">
           <% if unchecked_notifications.any? %>
-            <%= link_to '通知', notifications_path , class: "nav-link notice-active" %>
+            <%= link_to notifications_path do %>
+              <i class="fas fa-bell" style="color: #ff7f7f;"></i>
+            <% end %>
           <% else %>
-            <%= link_to '通知', notifications_path , class: "nav-link" %>
+            <%= link_to notifications_path , class: "nav-link" do %>
+              <i class="fas fa-bell" style="color: cornflowerblue;"></i>
+            <% end %>
           <% end %>
         </li>
         <span class="text-muted px-2">|</span>
