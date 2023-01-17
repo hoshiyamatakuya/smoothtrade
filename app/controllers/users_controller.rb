@@ -4,6 +4,10 @@ class UsersController < ApplicationController
     @users=current_user.followings.all
   end
 
+  def index_followers
+    @users=current_user.followers.all
+  end
+
   def show
     @user=User.find(params[:id])
     @currentUserEntry=Entry.where(user_id: current_user.id)

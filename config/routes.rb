@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'bookmarks/create'
   get 'bookmarks/destroy'
   get 'my_posts/index'
+  get 'users/index_followers'
   resources :messages, only: [:create]
   resources :rooms, only: [:create, :index, :show]
   resources :posts do
