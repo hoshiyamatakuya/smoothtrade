@@ -5,7 +5,7 @@
     <div class= 'card-body'>
       <div class= 'd-flex'>
         <div class= 'avatar-wrapper'>
-          <%= image_tag visitor.avatar.url, class:'avatar-notice' %>
+          <%= image_tag visitor.avatar.url, size: '40x40', class: 'rounded-circle mr15'%>
         </div>
         <div class= 'notice-wrapper'>
           <%= link_to user_path(visitor),class: 'btn btn-link notice-link' do %>
@@ -15,6 +15,12 @@
             <% when 'dm' then %>
               あなたに
               <%= link_to 'メッセージ', notification.room, class: 'btn btn-link notice-link' %>
+              を送りました。
+              <%= link_to I18n.t('notice.read'),notification_path(notification.id),method: :put, class: 'btn btn-link notice-link' %>
+              
+            <% when 'comment' then %>
+              あなたに
+              <%= link_to 'コメント', notification.comment, class: 'btn btn-link notice-link' %>
               を送りました。
               <%= link_to I18n.t('notice.read'),notification_path(notification.id),method: :put, class: 'btn btn-link notice-link' %>
             <% end %>
