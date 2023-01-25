@@ -1,14 +1,16 @@
 <% @another_entries.each do |entry| %>
   <%= link_to room_path(entry.room) do %>
-    <div class = 'card'>
+    <div class = 'card my-5'>
       <div class = 'card-body'>
           <div class= 'd-flex'>
             <div class= 'chat-avatar>
                 <object>
-                  <div class= 'chat-user-name>
+                  <div class= 'chat-user-name'>
                     <%= image_tag entry.user.avatar.url, size: '40x40', class: 'rounded-circle mr15'%>
                     <%= entry.user.username %>
-                    <%= Message.find_by(id: entry.room.message_ids.last)&.body %>
+                    <div class= 'chat-body mt-3'>
+                      <%= Message.find_by(id: entry.room.message_ids.last)&.body %>
+                    </div>
                   </div>
             </div>
           </div>
