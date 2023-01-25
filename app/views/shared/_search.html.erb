@@ -1,16 +1,47 @@
 
 <%= search_form_for @q, url: posts_path do |f| %>
-  <div class="input-group mb-3">
-    <%= f.search_field :title_cont, class: 'form-control', placeholder: 'キーワードで検索してみよう！' %>
-    <%= f.search_field :body_cont, class: 'form-control', placeholder: '譲渡商品名で検索してみよう！' %>
-    <%= f.search_field :wish_body_cont, class: 'form-control', placeholder: '希望商品名で検索してみよう！' %>
-    <br>
-    <%= f.search_field :post_category_cont, class: 'form-control', placeholder: 'アーティスト名、アニメ名で検索してみよう！' %>
-    <%= f.search_field :goods_category_cont, class: 'form-control', placeholder: '商品カテゴリーで検索してみよう！' %>
-    <%= f.search_field :goods_name_cont, class: 'form-control', placeholder: '商品正式名で検索してみよう！' %>
-    <%= f.search_field :year_cont, class: 'form-control', placeholder: '販売年で検索してみよう！' %>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">欲しい商品を検索</label>
+      <%= f.search_field :body_cont, class: 'form-control', placeholder: '譲渡商品名で検索してみよう！' %>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">自分が提供できる商品で検索</label>
+      <%= f.search_field :wish_body_cont, class: 'form-control', placeholder: '希望商品名で検索してみよう！' %>
+    </div>
+    <nav class="nav nav-pills nav-justified">
+      <button id="btnGroupDrop1" type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      さらに細かく検索したい方はこちらから
+      </button>
+      <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+        <div class="form-group">
+          <label for="inputPassword4">キーワード検索</label>
+          <%= f.search_field :title_cont, class: 'form-control', placeholder: '夏フェス' %>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail4">アーティスト検索</label>
+          <%= f.search_field :post_category_cont, class: 'form-control', placeholder: 'ポケモン' %>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword4">商品カテゴリ検索</label>
+          <%= f.search_field :goods_category_cont, class: 'form-control', placeholder: '缶バッチ' %>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail4">グッズ正式名称を検索</label>
+          <%= f.search_field :goods_name_cont, class: 'form-control', placeholder: '真夏の缶バッチ' %>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+          <label for="inputPassword4">販売年検索</label>
+          <%= f.search_field :year_cont, class: 'form-control', placeholder: '2021' %>
+        </div>
+      </div>
+    </nav>
     <div class="input-group-append">
       <%= f.submit class: 'btn btn-primary' %>
     </div>
+    
   </div>
 <% end %>
+
+
