@@ -49,7 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: cldk5ju68002q9ro49zv27n4t
-  username: cldk5ju67002o9ro4ccw96hgd
+  database: cldkagnsx003o9ro4gbgxbo7v
+  username: cldkagnsw003m9ro4d2b0gf91
   password: <%= ENV['SMOOTHTRADE_DATABASE_PASSWORD'] %>
   url: <%= ENV['DATABASE_URL'] %>
