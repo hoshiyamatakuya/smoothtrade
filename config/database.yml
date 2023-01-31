@@ -49,6 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: smoothtrade_production
-  username: smoothtrade
+  database: cldk5ju68002q9ro49zv27n4t
+  username: cldk5ju67002o9ro4ccw96hgd
   password: <%= ENV['SMOOTHTRADE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
