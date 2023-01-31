@@ -1,0 +1,5 @@
+<p>Welcome <%= @email %>!</p>
+
+<p>※本メールは、スムトレより会員登録を希望された方にお送りしています。もし、お心当たりっがない場合は、その旨sugishita212@gmail.com までご連絡いただければ幸いです。</p>
+
+<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>

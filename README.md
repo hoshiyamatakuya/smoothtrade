@@ -68,3 +68,7 @@ https://www.figma.com/file/xgdYItSjZyMTmOMVR2q3ql/Untitled?node-id=0%3A1&t=sBp6X
 
 ER図　
 https://drive.google.com/file/d/1TQ3OvkDycE69LjChiDUvNd-WUjwd_Nbt/view?usp=sharing
+
+
+参考url
+https://qiita.com/cigalecigales/items/f4274088f20832252374#2-gemfile%E3%81%AE%E7%B7%A8%E9%9B%86%E3%81%A8%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB

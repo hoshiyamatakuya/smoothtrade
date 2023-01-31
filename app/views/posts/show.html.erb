@@ -1,0 +1,48 @@
+<div class="container pt-5">
+  <div class="row mb-3">
+    <div class="col-lg-8 offset-lg-2">
+      <% unless current_user.own?(@post) %>
+        <% if current_user.following?(@post.user) %>
+          <%= link_to 'フォロー外す', user_relationships_path(@post.user_id), method: :delete, class: "btn-sm btn-danger" %>
+        <% else %>
+          <%= link_to 'フォローする', user_relationships_path(@post.user_id), method: :post, class:"btn-sm btn-success" %>
+        <% end %>
+      <% end %>
+      
+      <!-- 掲示板内容 -->
+      <article class="card">
+        <div class="card-body">
+          <div class='row'>
+            <div class='col-md-3'>
+              <%= image_tag @post.post_image.url, class: 'card-img-top img-fluid', size: '300x200' %>
+            </div>
+            <div class='col-md-9'>
+              <h3 class="d-inline"><%= @post.title %></h3>
+              <div class="body_area">
+                <h7>●譲渡品：</h7>
+                <p class="card-text"><%=safe_join(@post.body.split("\n"),tag(:br))%></p>
+              </div>
+              <div class="body_area">
+                <h7>●希望品：</h7>
+                <p class="card-text"><%=safe_join(@post.wish_body.split("\n"),tag(:br))%></p>
+              </div>
+              <br>
+              <%= render 'crud_menus', post: @post if current_user.own?(@post) %>
+              <ul class="list-inline">
+                <%= image_tag @post.user.avatar.url, size: '40x40', class: 'rounded-circle mr15'%>
+                <li class="list-inline-item"><%= link_to @post.user.username, index_user_post_path(@post.user_id), class: 'nav-link' %></li>
+                <li class="list-inline-item"><%= l @post.created_at, format: :long  %></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+  <!-- コメントフォーム -->
+  <%= render 'comments/form', { post: @post, comment: @comment } %>
+
+  <!-- コメントエリア -->
+  <%= render 'comments/comments', { comments: @comments } %>
+
+</div>

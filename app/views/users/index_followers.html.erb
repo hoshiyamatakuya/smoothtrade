@@ -1,0 +1,7 @@
+<h1>DM</h1>
+
+<h2>Hello <%= current_user.username %></h2>
+  <% @users.each do |u| %>
+  <p><a href="/users/<%= u.id %>"><%= u.username %>さん</a></p>
+  <hr>
+  <% end %>

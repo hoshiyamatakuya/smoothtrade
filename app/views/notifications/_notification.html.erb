@@ -1,0 +1,29 @@
+<% visitor = notification.visitor %>
+<% visited = notification.visited %>
+<% if notification.checked == false %>
+  <div class = 'card'>
+    <div class= 'card-body'>
+      <div class= 'd-flex'>
+        <div class= 'avatar-wrapper'>
+          <%= image_tag visitor.avatar.url, size: '40x40', class: 'rounded-circle mr15'%>
+        </div>
+        <div class= 'notice-wrapper'>
+          <%= link_to user_path(visitor),class: 'btn btn-link notice-link' do %>
+            <%= visitor.username %>
+            さんが
+            <% case notification.action %>
+            <% when 'dm' then %>
+              あなたに
+              <%= link_to 'メッセージ', notification.room, class: 'btn btn-link notice-link' %>
+              を送りました。
+            <% when 'comment' then %>
+              あなたに
+              <%= link_to 'コメント', post_path(notification.comment.post), class: 'btn btn-link notice-link' %>
+              を送りました。
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

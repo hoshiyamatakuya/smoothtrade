@@ -1,0 +1,65 @@
+<header>
+  <nav class="navbar navbar-expand-lg navigation navbar-light bg-light">
+
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="col-lg-6 d-none d-lg-block">
+      <div class="d-inline-flex align-items-center">
+        <%= link_to 'logo(投稿一覧)', posts_path %>
+        <span class="text-muted px-2">|</span>
+        <%= link_to '会社概要', '#' %>
+        <span class="text-muted px-2">|</span>
+        <a class="text-dark" href="">Help</a>
+        <span class="text-muted px-2">|</span>
+        <a class="text-dark" href="">Support</a>
+      </div>
+    </div>
+      <ul class="navbar-nav ml-auto main-nav align-items-center">
+        <li class="nav-item">
+          <%= link_to 'お知らせ', '#' %>
+        </li>
+        <span class="text-muted px-2">|</span>
+        <li class="nav-item">
+          <% if unchecked_notifications.any? %>
+            <%= link_to notifications_path do %>
+              <i class="fas fa-bellfas fa-bell faa-ring animated" style="color: #ff7f7f;" ></i>
+            <% end %>
+          <% else %>
+            <%= link_to notifications_path , class: "nav-link" do %>
+              <i class="fas fa-bell" style="color: cornflowerblue;"></i>
+            <% end %>
+          <% end %>
+        </li>
+        <span class="text-muted px-2">|</span>
+        <li class="nav-item">
+          <%= link_to 'マイページ', mypage_index_path %>
+        </li>
+        <span class="text-muted px-2">|</span>
+        <li class="nav-item">
+          <%= link_to 'DM', rooms_path %>
+        </li>
+        <span class="text-muted px-2">|</span>
+        <li class="nav-item">
+          <%= link_to '出品作成', new_post_path, class: 'dropdown-item' %>
+        </li>
+        <a class="text-dark px-2" href="">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <li class="nav-item dropdown dropdown-slide">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="header-profile">
+          <%= image_tag current_user.avatar.url, size: '40x40', class: 'rounded-circle mr15'%>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <div class="dropdown-item"><%= current_user.username %></div>
+            <div class="dropdown-divider"></div>
+            <%= link_to 'プロフィール変更', edit_user_registration_path, class:"dropdown-item" %>
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"dropdown-item" %>
+          </div>
+        </li>
+      </ul>
+    </div>
+    
+  </nav>
+  
+</header>

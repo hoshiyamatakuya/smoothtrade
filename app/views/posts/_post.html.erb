@@ -1,0 +1,59 @@
+<div class="col-sm-12 col-lg-4 mb-3">
+  <div id="post-id-<%= post.id %>">
+    <div class="card">
+      <%= image_tag post.post_image_url, class: 'card-img-top', size: '200x300' %>
+      <div class="card-body">
+        <h4 class="card-title">
+          <%= link_to post.title, post_path(post) %>
+        </h4>
+        <% if current_user.own?(post) %>
+          <%= render 'posts/crud_menus', post: post %>
+        <% else %>
+          <%= render 'posts/bookmark_button', post: post  %>
+        <% end %>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <%= image_tag post.user.avatar.url, size: '40x40', class: 'rounded-circle mr15'%>
+            <%= link_to post.user.username, index_user_post_path(post.user_id), class: 'nav-link'  %>
+          </li>
+          <li class="list-inline-item">
+            <%= icon 'far', 'calendar' %>
+            <%= l post.created_at, format: :long %>
+          </li>
+        </ul>
+        <div class="body_area">
+          <h7>●譲渡品：</h7>
+          <p class="card-text"><%=safe_join(post.body.split("\n"),tag(:br))%></p>
+        </div>
+        <div class="body_area">
+        <h7>●希望品：</h7>
+          <p class="card-text"><%=safe_join(post.wish_body.split("\n"),tag(:br))%></p>
+        </div>
+        <% if post.year == true %>
+          <div class="body_area">
+          <h7>・販売年</h7>
+            <p class="card-text"><%= post.year %></p>
+          </div>
+        <% end %>
+        <% if post.post_category == true %>
+          <div class="body_area">
+          <h7>・ブランド名</h7>
+            <p class="card-text"><%= post.post_category %></p>
+          </div>
+        <% end %>
+        <% if post.goods_category == true %>
+          <div class="body_area">
+          <h7>・カテゴリー</h7>
+            <p class="card-text"><%= post.goods_category %></p>
+          </div>
+        <% end %>
+        <% if post.goods_name == true %>
+          <div class="body_area">
+          <h7>・グッズ販売名</h7>
+            <p class="card-text"><%= post.goods_name %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
