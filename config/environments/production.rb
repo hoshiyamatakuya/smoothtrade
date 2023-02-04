@@ -92,7 +92,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   # mailer setting
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'smoothtrade.magia.runteq.jp', port: 3000 }
   # mail setting
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
@@ -106,3 +106,4 @@ Rails.application.configure do
     :enable_starttls_auto => true
   }
 end
+
