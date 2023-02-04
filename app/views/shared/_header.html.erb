@@ -1,21 +1,22 @@
-<header>
-  <nav class="navbar navbar-expand-lg navigation navbar-light bg-light">
-
-
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <%= link_to 'logo(投稿一覧)', posts_path %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <div class="col-lg-6 d-none d-lg-block">
-      <div class="d-inline-flex align-items-center">
-        <%= link_to 'logo(投稿一覧)', posts_path %>
-        <span class="text-muted px-2">|</span>
-        <%= link_to '会社概要', '#' %>
-        <span class="text-muted px-2">|</span>
-        <a class="text-dark" href="">Help</a>
-        <span class="text-muted px-2">|</span>
-        <a class="text-dark" href="">Support</a>
-      </div>
-    </div>
-      <ul class="navbar-nav ml-auto main-nav align-items-center">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">会社概要</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Help</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Support</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto main-nav align-items-center">
         <li class="nav-item">
           <%= link_to 'お知らせ', '#' %>
         </li>
@@ -58,8 +59,7 @@
           </div>
         </li>
       </ul>
-    </div>
-    
-  </nav>
-  
-</header>
+  </div>
+</nav>
+
+
