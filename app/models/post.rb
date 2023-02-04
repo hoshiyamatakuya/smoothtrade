@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   validates :title, presence: true, length: { maximum: 255 }
   validates :body, presence: true, length: { maximum: 2_000 }
   validates :wish_body, presence: true, length: { maximum: 2_000 }
-  
+
   def create_notification_comment!(current_user, comment_id)
     # 自分以外にコメントしている人をすべて取得し、全員に通知を送る
     temp_ids = Comment.select(:user_id).where(post_id: id).where.not(user_id: current_user.id).distinct
