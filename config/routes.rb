@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'privacypolicys/top'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'users/index'
   get 'users/show'
