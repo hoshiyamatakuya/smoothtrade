@@ -1,4 +1,4 @@
-<div class='container'>
+<div class='container w-100'>
   <h1 class='text-center py-5'>DM一覧</h1>
   <table class="table">
   <thead>
@@ -6,17 +6,17 @@
       <th scope="col">#</th>
       <th scope="col">name</th>
       <th scope="col">Message</th>
+      <th scope="col">DM</th>
     </tr>
     <tr>
     <% @another_entries.each do |entry| %>
-      <%= link_to room_path(entry.room) do %>
         <th scope="col"><%= entry.id%></th>
       <th scope="col">
       <%= image_tag entry.user.avatar.url, size: '40x40', class: 'rounded-circle mr15'%>
       <%= entry.user.username %>
       </th>
       <th scope="col"><%= Message.find_by(id: entry.room.message_ids.last)&.body %></th>
-      <% end %>
+      <th scope="col"><%= link_to '確認する', room_path(entry.room) %></th>
     <% end %>
     </tr>
   </thead>
