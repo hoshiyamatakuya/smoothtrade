@@ -4,4 +4,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-
+.background {
+  background-image: image-url('back.jpg');
+  background-size: contain;
+}

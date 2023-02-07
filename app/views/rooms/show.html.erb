@@ -1,8 +1,9 @@
-<h1>DM</h1>
+<div class='container'>
+<h1 class='text-center py-5'>DM</h1>
 
-<h4>参加者</h4>
+<p class= 'text-center'>参加者</p>
 <% @entries.each do |e| %>
-  <h5><strong><a href="/users/<%= e.user.id %>"><%= e.user.username%>さん</a></strong></h5>
+  <h8><strong><a href="/users/<%= e.user.id %>"><%= e.user.username%>さん</a></strong></h8>
 <% end %>
 
 <hr>
@@ -25,3 +26,4 @@
 <% end %>
 
 <%= link_to "ユーザー一覧に戻る", users_path %>
+</div>

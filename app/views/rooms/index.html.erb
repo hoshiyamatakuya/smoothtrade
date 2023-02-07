@@ -1,4 +1,6 @@
-<% @another_entries.each do |entry| %>
+<div class='container'>
+  <h1 class='text-center py-5'>DM一覧</h1>
+  <% @another_entries.each do |entry| %>
   <%= link_to room_path(entry.room) do %>
     <div class = 'card my-5'>
       <div class = 'card-body'>
@@ -17,4 +19,5 @@
       </div>
     </div>
   <% end %>
-<% end %>
+  <% end %>
+</div>

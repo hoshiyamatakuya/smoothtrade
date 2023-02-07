@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'web_plofiles/top'
   get 'helps/top'
   get 'terms_of_services/top'
   get 'privacypolicys/top'
