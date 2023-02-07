@@ -1,23 +1,26 @@
 <div class='container'>
   <h1 class='text-center py-5'>DM一覧</h1>
-  <% @another_entries.each do |entry| %>
-  <%= link_to room_path(entry.room) do %>
-    <div class = 'card my-5'>
-      <div class = 'card-body'>
-          <div class= 'd-flex'>
-            <div class= 'chat-avatar>
-                <object>
-                  <div class= 'chat-user-name'>
-                    <%= image_tag entry.user.avatar.url, size: '40x40', class: 'rounded-circle mr15'%>
-                    <%= entry.user.username %>
-                    <div class= 'chat-body mt-3'>
-                      <%= Message.find_by(id: entry.room.message_ids.last)&.body %>
-                    </div>
-                  </div>
-            </div>
-          </div>
-      </div>
-    </div>
-  <% end %>
-  <% end %>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">name</th>
+      <th scope="col">Message</th>
+    </tr>
+    <tr>
+    <% @another_entries.each do |entry| %>
+      <%= link_to room_path(entry.room) do %>
+        <th scope="col"><%= entry.id%></th>
+      <th scope="col">
+      <%= image_tag entry.user.avatar.url, size: '40x40', class: 'rounded-circle mr15'%>
+      <%= entry.user.username %>
+      </th>
+      <th scope="col"><%= Message.find_by(id: entry.room.message_ids.last)&.body %></th>
+      <% end %>
+    <% end %>
+    </tr>
+  </thead>
+  
+</table>
 </div>
+
