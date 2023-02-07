@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'helps/top'
   get 'terms_of_services/top'
   get 'privacypolicys/top'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
