@@ -1,12 +1,15 @@
-<div class='container'>
-<h1 class='text-center py-5'>DM</h1>
-
-<p class= 'text-center'>参加者</p>
-<% @entries.each do |e| %>
-  <h8><strong><a href="/users/<%= e.user.id %>"><%= e.user.username%>さん</a></strong></h8>
-<% end %>
+<div class='container py-5 text-center'>
+<h1 class='text-center border-bottom pb-4 font-weight-bolder'>DM</h1>
+<div class='mt-5'>
+<p class= 'text-center font-weight-bolder'>参加者</p>
+<div class='text-center'>
+  <% @entries.each do |e| %>
+    <h8><strong><a href="/users/<%= e.user.id %>"><%= e.user.username%>さん</a></strong></h8>
+  <% end %>
+</div>
 
 <hr>
+<p class='text-center text-white font-weight-bolder bg-dark'>↓dmメッセージ本文↓</p>
 <% if @messages.present? %>
   <% @messages.each do |m| %>
     <strong><%= m.body %></strong>
@@ -22,8 +25,10 @@
   <%= f.text_field :body, :placeholder => "メッセージを入力して下さい" , :size => 70 %>
   <%= f.hidden_field :room_id, :value => @room.id %>
   <br>
-  <%= f.submit "投稿する" %>
+  <br>
+  <%= f.submit "投稿する", class:'btn btn-secondary' %>
 <% end %>
-
-<%= link_to "ユーザー一覧に戻る", users_path %>
+<br>
+<%= link_to "ユーザー一覧に戻る", users_path, class:'btn btn-light' %>
+</div>
 </div>

@@ -1,7 +1,10 @@
-<h1>DM</h1>
-
-<h2>Hello <%= current_user.username %></h2>
+<div class='container py-5'>
+  <h2 class='text-center pb-4 font-weight-bolder border-bottom'>HELLO<%= current_user.username %><br><br>フォローされているユーザーにDMを送る</h2>
+  <div class='mt-5'>
   <% @users.each do |u| %>
-  <p><a href="/users/<%= u.id %>"><%= u.username %>さん</a></p>
-  <hr>
+    <p><a href="/users/<%= u.id %>" style="font-weight:bold;"><%= u.username %>さん</a></p>
+    <hr>
   <% end %>
+  </div>
+</div>
+

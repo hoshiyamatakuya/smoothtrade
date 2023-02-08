@@ -1,15 +1,20 @@
-<div class='container'>
-<h1 class='text-center py-5'><%=current_user.username %>さんのマイページ</h1>
-<ul class="list-group list-group-flush text-center">
-  <li class="list-group-item list-group-item-warning"><%= link_to '出品一覧', my_posts_index_path, class: 'nav-link' %></li>
-  <li class="list-group-item list-group-item-warning"><%= link_to 'いいね一覧', bookmarks_posts_path, class: 'nav-link' %></li>
-  <li class="list-group-item list-group-item-warning"><%= link_to 'フォロワー 一覧', user_followers_path(current_user), class: 'nav-link' %>  </li>
-  <li class="list-group-item list-group-item-warning"><%= link_to 'フォロー 一覧', user_followings_path(current_user), class: 'nav-link' %>  </li>
-  <li class="list-group-item list-group-item-warning"><%= link_to 'フォローしたユーザーにdmを送る', users_path, class: 'nav-link' %>  </li>
-  <li class="list-group-item list-group-item-warning"><%= link_to 'フォロワーのユーザーにdmを送る', users_index_followers_path, class: 'nav-link' %></li>
-  <li class="list-group-item list-group-item-warning"><td><%=current_user.username %></td>
+<div class='container py-5'>
+<h1 class='text-center border-bottom pb-4 font-weight-bolder'><%=current_user.username %>さんのマイページ</h1>
+<div class='mt-5'>
+<ul class="list-group list-group-flush text-center ">
+  <li class="list-group-item list-group-item-warning"><%= link_to '出品一覧', my_posts_index_path, class: 'nav-link text-dark font-weight-bold' %></li>
+  <li class="list-group-item list-group-item-warning"><%= link_to 'いいね一覧', bookmarks_posts_path, class: 'nav-link text-dark font-weight-bold' %></li>
+  <li class="list-group-item list-group-item-warning"><%= link_to 'フォロワー 一覧', user_followers_path(current_user), class: 'nav-link text-dark font-weight-bold' %>  </li>
+  <li class="list-group-item list-group-item-warning"><%= link_to 'フォロー 一覧', user_followings_path(current_user), class: 'nav-link text-dark font-weight-bold' %>  </li>
+  <li class="list-group-item list-group-item-warning"><%= link_to 'フォローしたユーザーにdmを送る', users_path, class: 'nav-link text-dark font-weight-bold' %>  </li>
+  <li class="list-group-item list-group-item-warning"><%= link_to 'フォロワーのユーザーにdmを送る', users_index_followers_path, class: 'nav-link text-dark font-weight-bold' %></li>
+  <li class="list-group-item list-group-item-warning">
+    <div class='font-weight-bold text-danger'>
+    <td><%=current_user.username %></td>
     <td>フォロー数: <%= current_user.followings.count %></td>
     <td>フォロワー数: <%= current_user.followers.count %></td>
+    </div>
   </li>
 </ul>
+</div>
 </div>

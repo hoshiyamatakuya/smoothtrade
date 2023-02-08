@@ -1,20 +1,19 @@
-<h1>ユーザー詳細</h1>
-
-<h2><%= @user.username %></h2>
-
-<% if @user.id == current_user.id %>
-
-<% else %>
-  <% if @isRoom == true %>
-    <p><a href="/rooms/<%= @roomId %>">チャットへ</a>
+<div class='container py-5'>
+  <h2 class='text-center pb-4 font-weight-bolder border-bottom'>ユーザー詳細</h2>
+  <h2><%= @user.username %></h2>
+  <% if @user.id == current_user.id %>
   <% else %>
-    <%= form_for @room do |f| %>
+    <% if @isRoom == true %>
+      <p><a href="/rooms/<%= @roomId%>" style="font-weight:bold;color:dark;">チャットへ</a></p>
+    <% else %>
+      <%= form_for @room do |f| %>
       <%= fields_for @entry do |e| %>
-        <%= e.hidden_field :user_id, :value=> @user.id %>
+      <%= e.hidden_field :user_id, :value=> @user.id %>
       <% end %>
-      <%= f.submit "チャットを始める" %>
+      <%= f.submit "チャットを始める", class:'btn btn-secondary' %>
     <% end %>
   <% end %>
 <% end %>
 
-<%= link_to "ユーザー一覧に戻る", users_path %>
+<%= link_to "ユーザー一覧に戻る", users_path, class:'btn btn-light' %>
+</div>

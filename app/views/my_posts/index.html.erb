@@ -1,6 +1,7 @@
-<div class="container pt-3">
+<div class='container py-5'>
+<h2 class='text-center pb-4 font-weight-bolder'>自分の出品一覧</h2>
   <div class="row">
-    <div class="col-lg-10 offset-lg-1">
+    <div class="col-lg-10 offset-lg-1 border-bottom pb-4 ">
       <!-- 検索フォーム -->
       <form>
         <div class="input-group mb-3">
@@ -14,7 +15,7 @@
   </div>
 
   <!-- 掲示板一覧 -->
-  <div class="row">
+  <div class="row pt-4">
     <div class="col-12">
       <div class="row">
         <% if @posts.present? %>
@@ -30,5 +31,4 @@
     </div>
     <%= paginate @posts, theme: 'twitter-bootstrap-4'  %>
   </div>
-</div>
 </div>

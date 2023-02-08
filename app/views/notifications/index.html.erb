@@ -1,13 +1,16 @@
-<div class='container'>
+<div class='container py-5'>
 <% notifications = @notifications.where.not(visitor_id: current_user.id) %>
 <div class= 'container'>
   <div class = title >
-    <h2 class='text-center py-5'> 通知一覧 </h2>
+    <h2 class='text-center border-bottom pb-4 font-weight-bolder'> 通知一覧 </h2>
+    <div class='mt-5'>
     <% if notifications.exists? %>
       <%= render notifications %>
     <% else %>
       <p> 通知はありません </p>
     <% end %>
+    </div>
   </div>
 </div>
 </div>
+

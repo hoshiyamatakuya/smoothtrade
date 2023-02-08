@@ -1,3 +1,20 @@
-<% @users.each do |user| %>
-  <%= user.username %>
-<% end %>
+<div class='container py-5'>
+<h2 class='text-center pb-4 font-weight-bolder border-bottom'>自分がフォローした一覧</h2>
+
+  <!-- フォロワー一覧 -->
+  <div class="row pt-4">
+    <div class="col-12">
+      <div class="row">
+      <% @users.each do |user| %>
+        <table class="table table-bordered border-primary text-center text-white font-weight-bolder">
+          <tbody>
+            <tr>
+              <td><%= user.username %></td>
+            </tr>
+          </tbody>
+        </table>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
