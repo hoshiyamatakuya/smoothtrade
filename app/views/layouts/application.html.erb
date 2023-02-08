@@ -17,8 +17,6 @@
 
   <body>
   <div class='background'>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <% if user_signed_in? %>
       <%= render 'shared/header' %>
     <% else %>
@@ -27,6 +25,8 @@
     <div class="container_fluid">
       <%= yield %>
     </div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <br>
     <br>
     <br>
