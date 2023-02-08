@@ -1,4 +1,4 @@
-<div class="container pt-5">
+<div class='container py-5'>
   <div class="row mb-3">
     <div class="col-lg-8 offset-lg-2">
       <% unless current_user.own?(@post) %>
@@ -21,13 +21,13 @@
               <%= image_tag @post.post_image.url, class: 'card-img-top img-fluid', size: '300x200' %>
             </div>
             <div class='col-md-9'>
-              <h3 class="d-inline"><%= @post.title %></h3>
+              <h3 class="font-weight-bolder py-2"><%= @post.title %></h3>
               <div class="body_area">
-                <h7>●譲渡品：</h7>
+                <h7 class='text-success'>譲渡品</h7>
                 <p class="card-text"><%=safe_join(@post.body.split("\n"),tag(:br))%></p>
               </div>
               <div class="body_area">
-                <h7>●希望品：</h7>
+                <h7 class='text-danger'>希望品</h7>
                 <p class="card-text"><%=safe_join(@post.wish_body.split("\n"),tag(:br))%></p>
               </div>
               <br>

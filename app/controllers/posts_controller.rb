@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   end
 
   def index_user
+    @user = User.find(params[:id])
     @posts = Post.where(user_id:params[:id]).includes(:user).order(created_at: :desc).page(params[:page])
   end
 
