@@ -1,9 +1,9 @@
 #applicationのディレクトリ名で置き換えてください
-ARG APP_NAME=NewBeLab-Rails
+ARG APP_NAME=smoothtrade
 #使いたいrubyのimage名に置き換えてください
-ARG RUBY_IMAGE=ruby:3.1.2
+ARG RUBY_IMAGE=ruby:2.6.4
 #インストールするbundlerのversionに置き換えてください
-ARG BUNDLER_VERSION=2.3.16
+ARG BUNDLER_VERSION=2.3.22
 
 FROM $RUBY_IMAGE
 ARG APP_NAME
