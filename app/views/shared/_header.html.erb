@@ -36,9 +36,9 @@
         <li class="nav-item">
           <%= link_to '出品作成', new_post_path, class: 'dropdown-item text-danger font-weight-bold' %>
         </li>
-        <a class="text-white px-2" href="">
+        <%= link_to 'https://twitter.com/Smoothtrade212', target: :_blank, class:'px-2' do %>
           <i class="fab fa-twitter"></i>
-        </a>
+        <% end %>
         <li class="nav-item dropdown dropdown-slide">
           <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="header-profile">
           <%= image_tag current_user.avatar.url, size: '40x40', class: 'rounded-circle mr15'%>
