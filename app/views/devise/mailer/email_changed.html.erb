@@ -1,7 +1,19 @@
 <p>Hello <%= @email %>!</p>
 
 <% if @resource.try(:unconfirmed_email?) %>
-  <p>We're contacting you to notify you that your email is being changed to <%= @resource.unconfirmed_email %>.</p>
+  <p>ご登録のメールアドレスが <%= @resource.unconfirmed_email %>に変更されたことをお知らせするためにご連絡しています。</p>
 <% else %>
-  <p>We're contacting you to notify you that your email has been changed to <%= @resource.email %>.</p>
+  <p>ご登録のメールアドレスが <%= @resource.email %>に変更されたことをお知らせするためにご連絡しています。</p>
 <% end %>
+
+<p>【重要】</p>
+<ul>
+  <li>このメールにお心当たりのない場合は、読み捨ててください</li>
+</ul>
+
+<p>ご不明点やご質問がございましたら、お気楽にSmoothTrade公式LINEまでお問合せください。引き続き、SmoothTradeをよろしくお願いします。</p>
+<p><%= link_to 'SmoothTrade公式ライン', 'https://lin.ee/H6qVCFz' %></p>
+
+
+<br>
+<p>SmoothTrade: https://smoothtrade.magia.runteq.jp</p>

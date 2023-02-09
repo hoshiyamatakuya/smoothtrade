@@ -1,5 +1,18 @@
-<p>Welcome <%= @email %>!</p>
+<p>Hello <%= @email %>!</p>
 
-<p>※本メールは、スムトレより会員登録を希望された方にお送りしています。もし、お心当たりっがない場合は、その旨sugishita212@gmail.com までご連絡いただければ幸いです。</p>
+<p>※本メールは、スムトレより会員登録を希望された方にお送りしています。以下のリンクからメール認証を行うことができ、会員登録することができます。</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= link_to '会員登録を完了する', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<p>【重要】</p>
+<ul>
+  <li>上記アドレス（URL）は他者に公開しないようお取り扱いには充分お気をつけください。</li>
+  <li>アドレス（URL）が無効になっている場合はお手数ですが、再度パスワード再設定手続きをお願いします。</li>
+  <li>このメールにお心当たりのない場合は、読み捨ててください</li>
+</ul>
+
+<p>ご不明点やご質問がございましたら、お気楽にSmoothTrade公式LINEまでお問合せください。引き続き、SmoothTradeをよろしくお願いします。</p>
+<p><%= link_to 'SmoothTrade公式ライン', 'https://lin.ee/H6qVCFz' %></p>
+
+<br>
+<p>SmoothTrade: https://smoothtrade.magia.runteq.jp</p>
