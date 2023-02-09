@@ -1,7 +1,7 @@
 <div class='container py-5'>
   <div class="row mb-3">
     <div class="col-lg-8 offset-lg-2">
-      <% unless current_user.own?(@post) %>
+    <% unless current_user.own?(@post) %>
         <% if current_user.following?(@post.user) %>
           <%= link_to user_relationships_path(@post.user_id), method: :delete, class: "btn-sm btn-danger" do %>
             フォローを外す<i class="fas fa-user-times"></i>
@@ -16,7 +16,10 @@
           <i class="fab fa-twitter"></i>で投稿共有
         <% end %>
       <% end %>
-      
+    <div class='text-right'>
+      <div class="line-it-button" data-lang="ja" data-type="share-a" data-env="REAL" data-url="https://smoothtrade.magia.runteq.jp" data-color="default" data-size="small" data-count="false" data-ver="3" style="display: none;" data='{"turbolinks" => false}'></div>
+      <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+    </div>
       <!-- 掲示板内容 -->
       <article class="card">
         <div class="card-body">
