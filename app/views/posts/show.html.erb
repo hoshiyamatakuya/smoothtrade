@@ -11,6 +11,10 @@
             フォローする<i class="fas fa-user-plus"></i>
           <% end %>
         <% end %>
+      <% else %>
+        <%= link_to "http://twitter.com/share?url=#{request.url}/&text=提供:   希望:/&hashtags=成績UP",{class:"footer-icon_1 btn-sm btn-info"} do %>
+          <i class="fab fa-twitter"></i>で投稿共有
+        <% end %>
       <% end %>
       
       <!-- 掲示板内容 -->
