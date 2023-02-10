@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'notices/top'
   get 'supports/top'
   get 'web_plofiles/top'
   get 'helps/top'

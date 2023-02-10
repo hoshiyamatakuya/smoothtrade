@@ -1,0 +1,26 @@
+<div class='container py-5 text-center'>
+  <h1 class='text-center border-bottom pb-4 font-weight-bolder'>お知らせ</h1>
+  <div class='mt-5'>
+  <% if @notices == true %>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">title</th>
+      <th scope="col">Message</th>
+    </tr>
+    <tr>
+    <% @notices.each do |notice| %>
+        <th scope="col"><%= notice.id%></th>
+      <th scope="col"><%= notice.title %></th>
+      <th scope="col"><%= notice.body %></th>
+    <% end %>
+    </tr>
+  </thead>
+  </table>
+  <% else %>
+    <p class='text-center font-weight-bolder text-danger'>お知らせはありません。</p>
+  <% end %>
+
+</div>
+</div>
