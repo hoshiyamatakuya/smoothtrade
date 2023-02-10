@@ -5,13 +5,13 @@ module ApplicationHelper
       title: 'トレーディング専用webサイト',
       reverse: true,
       charset: 'utf-8',
-      description: 'sns上で気楽に交換！使い方もトレーディング専用webサイトだから簡単で誰でもすぐ利用できます。',
+      description: 'sns上で気楽に交換。。使い方もトレーディング専用webサイトだから簡単で誰でもすぐ利用できます。',
       keywords: 'トレード,trade,トレーディング,交換',
       canonical: request.original_url,
       separator: '|',# これで　"タイトル | サイトネーム"ってなる
       icon: [
-        { href: image_url('profile1.jpg') },
-        { href: image_url('logo.jpg'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/png' },
+        { href: image_url('logo.jpg') },
+        { href: image_url('plofile1.jpg'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/png' },
       ],
       og: {
         site_name: :'SmoothTrade',
@@ -33,44 +33,21 @@ module ApplicationHelper
   # 各ページのタイトル設定
   # Googleのような検索エンジンの検索結果一覧ページで活用されます
   def full_title(page_title = '')
-    base_title =SmoothTrade"
+    base_title = 'SmoothTrade'
     if page_title.empty?
       base_title
     else
-      base_title + " | " + page_title
+      "#{page_title} | #{base_title}"
     end
   end
   
-  # 各ページの説明文　120文字前後
-  # Googleのような検索エンジンの検索結果一覧ページで活用されます
-  def full_description(page_description = '')
-    base_description = "SmoothTradeは、トレーディング専用webサイトです。sns上で気楽に交換！使い方もトレーディング専用webサイトだから簡単で誰でもすぐ利用できます。"
-    if page_description.empty?
-      base_description
-    else
-      page_description
-    end
+  def full_url(path)
+    domain = if Rails.env.development?
+               'http://0.0.0.0:3000'
+             else
+               'https://smoothtrade.link'
+             end
+    "#{domain}#{path}"
   end
   
-  # 各ページの説明文 50文字前後
-  # SNS等でシェアされた際に活用されます
-  def og_description(page_description = '')
-    base_description = "SmoothTradeは、トレーディング専用webサイトです。"
-    if page_description.empty?
-      base_description
-    else
-      page_description
-    end
-  end
-  
-  # 各ページのイメージ画像
-  # SNS等でシェアされた際に活用されます
-  def og_image(page_image = '')
-    base_image = "https://smoothtrade.link/app/assets/images/logo.jng"
-    if page_image.empty?
-      base_image
-    else
-      page_image
-    end
-  end
 end
