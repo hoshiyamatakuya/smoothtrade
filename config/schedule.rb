@@ -7,6 +7,8 @@
 #
 # set :output, "/path/to/my/cron_log.log"
 #
+ENV.each { |k, v| env(k, v) }
+
 every 1.day, :at => '02:00 am' do
   rake "-s sitemap:refresh"
 end
