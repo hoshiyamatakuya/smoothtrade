@@ -6,5 +6,5 @@ set -e
 bin/rails db:migrate
 #bin/rails db:seed
 bin/rails sitemap:refresh
-bundle exec whenever --update-crontab
+#bundle exec whenever --update-crontab
 bin/rails s
