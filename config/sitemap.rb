@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "https://smoothtrade.magia.runteq.jp"
+SitemapGenerator::Sitemap.default_host = "https://smoothtrade.link"
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
