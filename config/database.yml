@@ -48,8 +48,8 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
+#半角スペース２個分の空白を開ける
   <<: *default
-  database: cldkagnsx003o9ro4gbgxbo7v
-  username: cldkagnsw003m9ro4d2b0gf91
-  password: <%= ENV['SMOOTHTRADE_DATABASE_PASSWORD'] %>
-  url: <%= ENV['DATABASE_URL'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
